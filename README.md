@@ -406,16 +406,9 @@ Potential future improvements include:
 
 ---
 
-## Hackathon Objective
-
-ScamLens aims to make scam awareness more accessible by transforming suspicious content into an explainable risk assessment.
-
 The goal is simple:
 
 > Pause. Understand. Verify.
 
 ---
 
-## License
-
-This project is currently developed as a hackathon and educational project.
