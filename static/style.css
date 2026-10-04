@@ -1,0 +1,651 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #eef1f5;
+    color: #172033;
+    transition: background 0.25s ease, color 0.25s ease;
+}
+
+.container {
+    max-width: 950px;
+    margin: 0 auto;
+    padding: 50px 20px;
+}
+
+
+/* =========================
+   THEME TOGGLE
+========================= */
+
+.theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+#themeToggle {
+    width: 46px;
+    height: 46px;
+    padding: 0;
+    border-radius: 50%;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.logo {
+    font-size: 60px;
+    margin-bottom: 5px;
+}
+
+h1 {
+    font-size: 56px;
+    margin: 5px 0;
+    letter-spacing: -2px;
+}
+
+.tagline {
+    font-size: 25px;
+    font-weight: bold;
+    margin: 8px 0 15px;
+}
+
+.tagline span {
+    color: #dc2626;
+}
+
+.description {
+    max-width: 650px;
+    margin: 0 auto;
+    font-size: 17px;
+    line-height: 1.7;
+    color: #64748b;
+}
+
+
+/* =========================
+   UPLOAD CARD
+========================= */
+
+.upload-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 24px;
+    padding: 40px;
+    text-align: center;
+    box-shadow: 0 20px 50px rgba(15, 23, 42, 0.08);
+    transition: 0.25s ease;
+}
+
+.upload-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 25px 60px rgba(15, 23, 42, 0.11);
+}
+
+.upload-card h2 {
+    margin-top: 0;
+    font-size: 25px;
+}
+
+.upload-card p {
+    color: #64748b;
+    line-height: 1.6;
+}
+
+
+/* =========================
+   FILE INPUT
+========================= */
+
+input[type="file"] {
+    display: block;
+    width: 100%;
+    margin: 25px 0;
+    padding: 18px;
+    border: 2px dashed #cbd5e1;
+    border-radius: 16px;
+    background: #f8fafc;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+input[type="file"]:hover {
+    border-color: #94a3b8;
+    background: #f1f5f9;
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+button {
+    border: none;
+    border-radius: 14px;
+    padding: 16px 35px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    background: #172033;
+    color: #ffffff;
+    transition: 0.2s ease;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(23, 32, 51, 0.2);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+
+/* =========================
+   LOADING
+========================= */
+
+#loading {
+    display: none;
+    text-align: center;
+    margin: 40px 0;
+}
+
+.loader {
+    width: 45px;
+    height: 45px;
+    margin: 0 auto;
+    border: 4px solid #e2e8f0;
+    border-top: 4px solid #172033;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* =========================
+   RESULT CARDS
+========================= */
+
+.card {
+    background: #ffffff;
+    margin-top: 22px;
+    padding: 28px;
+    border-radius: 20px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+    animation: slideUp 0.35s ease;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card h2 {
+    margin-top: 0;
+    font-size: 23px;
+}
+
+.card h3 {
+    margin-top: 22px;
+}
+
+
+/* =========================
+   MAIN RISK CARD
+========================= */
+
+.risk-card {
+    border-top: 5px solid #dc2626;
+}
+
+.result-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.result-label {
+    margin: 0 0 8px;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    color: #64748b;
+}
+
+.result-header h2 {
+    margin: 0;
+    font-size: 28px;
+}
+
+
+/* =========================
+   RISK SCORE
+========================= */
+
+.risk-score {
+    min-width: 115px;
+    height: 115px;
+    border-radius: 50%;
+    border: 7px solid #fee2e2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #fff7f7;
+}
+
+.score-number {
+    font-size: 34px;
+    font-weight: 800;
+    line-height: 1;
+    color: #b91c1c;
+}
+
+.score-label {
+    font-size: 13px;
+    margin-top: 5px;
+    color: #64748b;
+}
+
+
+/* =========================
+   RISK LEVEL
+========================= */
+
+.risk {
+    display: inline-block;
+    padding: 10px 18px;
+    border-radius: 999px;
+    font-size: 17px;
+    font-weight: bold;
+    margin: 22px 0 8px;
+}
+
+.very-high,
+.high {
+    color: #b91c1c;
+    background: #fee2e2;
+}
+
+.medium {
+    color: #c2410c;
+    background: #ffedd5;
+}
+
+.low {
+    color: #15803d;
+    background: #dcfce7;
+}
+
+.uncertain {
+    color: #475569;
+    background: #e2e8f0;
+}
+
+.summary {
+    line-height: 1.7;
+    font-size: 16px;
+}
+
+.responsible-score {
+    margin-top: 20px;
+    padding: 13px 16px;
+    border-radius: 12px;
+    background: #f8fafc;
+    color: #64748b;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+
+/* =========================
+   RISK BREAKDOWN
+========================= */
+
+.risk-breakdown {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.risk-item {
+    padding: 16px;
+    border-radius: 14px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+}
+
+.risk-item-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+.risk-item p {
+    margin: 8px 0 0;
+    color: #64748b;
+    line-height: 1.5;
+    font-size: 14px;
+}
+
+
+/* =========================
+   SEVERITY
+========================= */
+
+.severity {
+    padding: 5px 10px;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+.severity.high {
+    background: #fee2e2;
+    color: #b91c1c;
+}
+
+.severity.medium {
+    background: #ffedd5;
+    color: #c2410c;
+}
+
+.severity.low {
+    background: #dcfce7;
+    color: #15803d;
+}
+
+
+/* =========================
+   EVIDENCE
+========================= */
+
+.evidence-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.evidence-list li {
+    margin: 12px 0;
+    padding: 13px 15px;
+    border-radius: 12px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    line-height: 1.5;
+}
+
+.evidence-icon {
+    font-size: 10px;
+    margin-right: 8px;
+    color: #dc2626;
+}
+
+
+/* =========================
+   RED FLAGS
+========================= */
+
+.flag {
+    border-left: 4px solid #dc2626;
+    padding: 16px 18px;
+    margin: 18px 0;
+    background: #fff7f7;
+    border-radius: 0 12px 12px 0;
+}
+
+.flag h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.flag p {
+    line-height: 1.6;
+    color: #475569;
+}
+
+
+/* =========================
+   CHECKLISTS
+========================= */
+
+.checklist {
+    padding-left: 0;
+    list-style: none;
+}
+
+.checklist li {
+    margin: 12px 0;
+    padding: 13px 15px;
+    border-radius: 12px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    line-height: 1.6;
+}
+
+
+/* =========================
+   ACTION PLAN
+========================= */
+
+.action-card {
+    border-left: 5px solid #172033;
+}
+
+.section-description {
+    color: #64748b;
+    line-height: 1.6;
+}
+
+.action-plan {
+    counter-reset: action;
+    list-style: none;
+    padding: 0;
+    margin: 20px 0 0;
+}
+
+.action-plan li {
+    counter-increment: action;
+    position: relative;
+    padding: 15px 15px 15px 55px;
+    margin: 12px 0;
+    background: #f8fafc;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    line-height: 1.6;
+}
+
+.action-plan li::before {
+    content: counter(action);
+    position: absolute;
+    left: 15px;
+    top: 12px;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: #172033;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+
+/* =========================
+   DISCLAIMER
+========================= */
+
+.disclaimer {
+    margin-top: 35px;
+    padding: 22px;
+    background: #fff8e7;
+    border: 1px solid #f5df9b;
+    border-radius: 16px;
+    color: #69520b;
+    line-height: 1.6;
+    font-size: 14px;
+    text-align: center;
+}
+
+
+/* =========================
+   DARK MODE
+========================= */
+
+body.dark-mode {
+    background: #0f172a;
+    color: #e2e8f0;
+}
+
+body.dark-mode .upload-card,
+body.dark-mode .card {
+    background: #1e293b;
+    border-color: #334155;
+    color: #e2e8f0;
+}
+
+body.dark-mode .description,
+body.dark-mode .upload-card p,
+body.dark-mode .risk-item p,
+body.dark-mode .flag p,
+body.dark-mode .section-description {
+    color: #94a3b8;
+}
+
+body.dark-mode input[type="file"] {
+    background: #0f172a;
+    border-color: #475569;
+    color: #e2e8f0;
+}
+
+body.dark-mode input[type="file"]:hover {
+    background: #1e293b;
+}
+
+body.dark-mode button {
+    background: #f8fafc;
+    color: #172033;
+}
+
+body.dark-mode .responsible-score,
+body.dark-mode .risk-item,
+body.dark-mode .evidence-list li,
+body.dark-mode .checklist li,
+body.dark-mode .action-plan li {
+    background: #0f172a;
+    border-color: #334155;
+}
+
+body.dark-mode .result-label {
+    color: #94a3b8;
+}
+
+body.dark-mode .flag {
+    background: #2a1717;
+}
+
+body.dark-mode .risk-score {
+    background: #2a1717;
+    border-color: #7f1d1d;
+}
+
+body.dark-mode .disclaimer {
+    background: #29230f;
+    border-color: #66551a;
+    color: #f5df9b;
+}
+
+body.dark-mode .action-card {
+    border-left-color: #f8fafc;
+}
+
+body.dark-mode .action-plan li::before {
+    background: #f8fafc;
+    color: #172033;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .container {
+        padding: 30px 15px;
+    }
+
+    h1 {
+        font-size: 42px;
+    }
+
+    .tagline {
+        font-size: 21px;
+    }
+
+    .upload-card {
+        padding: 25px;
+    }
+
+    .card {
+        padding: 22px;
+    }
+
+    .result-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .risk-score {
+        width: 100px;
+        height: 100px;
+    }
+
+    .score-number {
+        font-size: 30px;
+    }
+
+    .risk-item-top {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 8px;
+    }
+}

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ScamLens — AI Scam Awareness</title>
+
+    <link rel="stylesheet" href="/static/style.css?v=2">
+</head>
+
+<body>
+    <div class="theme-toggle">
+    <button id="themeToggle" onclick="toggleTheme()" aria-label="Toggle dark mode">
+    🌙
+</button>
+</div>
+
+    <div class="container">
+
+        <div class="hero">
+            <div class="logo">🛡️</div>
+
+            <h1>ScamLens</h1>
+
+            <p class="tagline">
+                Don't trust it. <span>Scan it.</span>
+            </p>
+
+            <p class="description">
+                Upload a suspicious message, job offer, payment request,
+                email or social media screenshot.
+            </p>
+        </div>
+
+
+        <div class="upload-card">
+
+            <h2>🔍 Analyze Suspicious Content</h2>
+
+            <p>
+                Let AI identify potential warning signs and explain
+                what you should verify.
+            </p>
+
+            <input
+                type="file"
+                id="imageInput"
+                accept="image/*"
+            >
+
+            <button onclick="analyzeImage()">
+                Analyze with Gemma
+            </button>
+
+        </div>
+
+
+        <div id="loading">
+
+            <div class="loader"></div>
+
+            <h3>Analyzing...</h3>
+
+            <p>
+                Gemma is checking the content for potential warning signs.
+            </p>
+
+        </div>
+
+
+        <div id="result"></div>
+
+
+        <div class="disclaimer">
+
+            ⚠️ <strong>Responsible AI Notice:</strong>
+
+            ScamLens is an awareness and verification assistant.
+            It does not guarantee that content is fraudulent or legitimate.
+            Always verify suspicious information through trusted sources.
+
+        </div>
+
+    </div>
+
+
+    <script src="/static/script.js?v=2"></script>
+
+</body>
+</html>
