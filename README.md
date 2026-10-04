@@ -2,6 +2,10 @@
 
 ## Don't trust it. Scan it.
 
+## Live Demo
+
+[ScamLens Live Demo](https://scamlens-y5z4.onrender.com)
+
 ScamLens is an AI-powered scam-awareness and verification assistant that analyzes suspicious screenshots and visual content using Gemma 4.
 
 Instead of simply classifying content as "scam" or "not a scam", ScamLens identifies potential warning signals, explains the evidence behind the assessment, provides verification steps, and recommends practical safety actions.
